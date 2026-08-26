@@ -1,0 +1,1060 @@
+﻿/* =====================================================
+   1. BASE / RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #0f0f14;
+    color: #ffffff;
+}
+
+main {
+    width: 100%;
+    padding: 35px 40px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+p {
+    color: #b8b8c7;
+    font-size: 16px;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    transition: transform 0.15s, background-color 0.2s, border-color 0.2s, opacity 0.2s;
+    cursor: pointer;
+}
+
+    button:active:not(:disabled) {
+        transform: scale(0.98);
+    }
+
+    button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.12);
+}
+
+
+/* =====================================================
+   2. HEADER
+===================================================== */
+
+.topo-cinema {
+    padding: 30px 35px;
+    background: linear-gradient( 135deg, #15151d, #1d1013 );
+    border-bottom: 1px solid #2b2b35;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo-icone {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e50914;
+    border-radius: 14px;
+    font-size: 28px;
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.25);
+}
+
+.topo-cinema h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+    .topo-cinema h1 span {
+        color: #e50914;
+    }
+
+.topo-cinema p {
+    margin: 7px 0 0;
+    color: #a7a7b3;
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   3. FILMES
+===================================================== */
+
+#titulo-filmes {
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.filmes-container {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(260px, 280px) );
+    gap: 28px;
+    align-items: start;
+}
+
+.filme-card {
+    overflow: hidden;
+    padding: 0;
+    background: #18181f;
+    border: 1px solid #292934;
+    border-radius: 15px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+    .filme-card:hover {
+        transform: translateY(-5px);
+        border-color: #e50914;
+    }
+
+.filme-poster-container {
+    width: 100%;
+    height: 360px;
+    background: #0d0d12;
+}
+
+.filme-poster {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.filme-info {
+    padding: 22px;
+}
+
+    .filme-info h3 {
+        min-height: 52px;
+        margin: 0 0 15px;
+        color: white;
+        font-size: 22px;
+    }
+
+    .filme-info p {
+        margin: 12px 0;
+        color: #b8b8c7;
+    }
+
+    .filme-info strong {
+        color: white;
+    }
+
+    .filme-info button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #e50914;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+        .filme-info button:hover {
+            background: #ff1f2c;
+        }
+
+
+/* =====================================================
+   4. SESSÕES
+===================================================== */
+
+#area-sessoes {
+    padding: 40px;
+}
+
+.sessoes-cabecalho {
+    margin-bottom: 30px;
+}
+
+    .sessoes-cabecalho h2 {
+        margin-bottom: 8px;
+    }
+
+    .sessoes-cabecalho h3 {
+        margin: 0 0 6px;
+        color: #e50914;
+        font-size: 20px;
+    }
+
+    .sessoes-cabecalho p {
+        margin: 0;
+        color: #aaaab5;
+    }
+
+#lista-sessoes {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(280px, 320px) );
+    gap: 22px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.sessao-card {
+    padding: 24px;
+    background: #16161e;
+    border: 1px solid #2b2b36;
+    border-radius: 16px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+    .sessao-card:hover {
+        transform: translateY(-4px);
+        border-color: #e50914;
+    }
+
+    .sessao-card h3 {
+        margin-bottom: 18px;
+        font-size: 22px;
+    }
+
+    .sessao-card p {
+        margin: 12px 0;
+        color: #c1c1cd;
+    }
+
+    .sessao-card strong {
+        color: white;
+    }
+
+    .sessao-card button {
+        width: 100%;
+        margin-top: 18px;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #e50914;
+        color: white;
+        font-weight: bold;
+    }
+
+        .sessao-card button:hover {
+            background: #ff1f2c;
+        }
+
+#area-sessoes > button {
+    padding: 10px 18px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+}
+
+    #area-sessoes > button:hover {
+        background: #202029;
+    }
+
+
+/* =====================================================
+   5. ASSENTOS
+===================================================== */
+
+#area-assentos {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+    #area-assentos h2 {
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+
+.tela-cinema {
+    max-width: 700px;
+    margin: 30px auto 45px;
+    padding: 12px;
+    text-align: center;
+    background: linear-gradient( to bottom, #ffffff, #d9d9d9 );
+    color: #111;
+    border-radius: 50% 50% 10px 10px;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.12);
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+.assentos-container {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 12px;
+}
+
+.assento {
+    height: 42px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+    .assento.livre {
+        background: #2e7d32;
+    }
+
+        .assento.livre:hover {
+            background: #43a047;
+            transform: translateY(-2px);
+        }
+
+    .assento.ocupado {
+        background: #555;
+        cursor: not-allowed;
+    }
+
+    .assento.selecionado {
+        background: #e50914;
+        transform: scale(1.08);
+    }
+
+
+/* LEGENDA */
+
+.legenda-assentos {
+    max-width: 700px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+    .legenda-assentos div {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+.legenda-cor {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+}
+
+    .legenda-cor.livre {
+        background: #2e7d32;
+    }
+
+    .legenda-cor.selecionado {
+        background: #e50914;
+    }
+
+    .legenda-cor.ocupado {
+        background: #555;
+    }
+
+
+/* AÇÕES */
+
+.acoes-assentos {
+    max-width: 700px;
+    margin: 30px auto 0;
+    display: flex;
+    gap: 12px;
+}
+
+    .acoes-assentos button {
+        flex: 1;
+        padding: 13px 20px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+#btn-continuar-assento {
+    background: #e50914;
+    color: white;
+}
+
+    #btn-continuar-assento:hover:not(:disabled) {
+        background: #ff1f2c;
+    }
+
+    #btn-continuar-assento:disabled {
+        background: #444;
+        color: #888;
+    }
+
+.acoes-assentos button:last-child {
+    background: transparent;
+    color: white;
+    border: 1px solid #444;
+}
+
+    .acoes-assentos button:last-child:hover {
+        background: #202029;
+    }
+
+
+/* =====================================================
+   6. CLIENTE / FORMULÁRIO
+===================================================== */
+
+#area-cliente {
+    padding: 40px;
+}
+
+.cliente-container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #16161e;
+    border: 1px solid #292934;
+    border-radius: 16px;
+}
+
+    .cliente-container h2 {
+        margin-bottom: 8px;
+    }
+
+    .cliente-container > p {
+        margin-bottom: 25px;
+    }
+
+    .cliente-container label {
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 7px;
+        font-weight: bold;
+    }
+
+    .cliente-container input,
+    .cliente-container select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #333;
+        border-radius: 8px;
+        background: #0d0d12;
+        color: white;
+        font-size: 15px;
+    }
+
+.cliente-acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+    .cliente-acoes button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+        .cliente-acoes button:first-child {
+            background: transparent;
+            color: white;
+            border: 1px solid #444;
+        }
+
+            .cliente-acoes button:first-child:hover {
+                background: #202029;
+            }
+
+        .cliente-acoes button:last-child {
+            background: #e50914;
+            color: white;
+        }
+
+            .cliente-acoes button:last-child:hover {
+                background: #ff1f2c;
+            }
+
+
+/* =====================================================
+   7. VALIDAÇÃO
+===================================================== */
+
+.cliente-container input.campo-invalido,
+.cliente-container select.campo-invalido {
+    border: 1px solid #e50914 !important;
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.15) !important;
+    background: linear-gradient( 0deg, rgba(229, 9, 20, 0.03), rgba(229, 9, 20, 0.03) ), #0d0d12;
+}
+
+
+/* ERRO INDIVIDUAL DO CAMPO */
+
+.cliente-container .erro-campo {
+    display: none !important;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    padding: 9px 11px;
+    border: 1px solid rgba(229, 9, 20, 0.28);
+    border-radius: 8px;
+    background: rgba(229, 9, 20, 0.08);
+    color: #ff747b !important;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    box-shadow: 0 4px 14px rgba(229, 9, 20, 0.06);
+    animation: aparecerErroCampo 0.18s ease;
+}
+
+
+    .cliente-container .erro-campo.visivel {
+        display: flex !important;
+        align-items: center;
+        gap: 8px;
+    }
+
+
+        .cliente-container .erro-campo.visivel::before {
+            content: "!";
+            width: 19px;
+            height: 19px;
+            min-width: 19px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #e50914;
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            box-shadow: 0 3px 10px rgba(229, 9, 20, 0.22);
+        }
+
+
+/* ERRO GERAL DA API */
+
+.mensagem-formulario {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    animation: aparecerMensagem 0.2s ease;
+}
+
+
+    .mensagem-formulario.erro {
+        background: rgba(229, 9, 20, 0.10);
+        border: 1px solid rgba(229, 9, 20, 0.35);
+        color: #ff7b82;
+        box-shadow: 0 4px 14px rgba(229, 9, 20, 0.08);
+    }
+
+
+    .mensagem-formulario.sucesso {
+        background: rgba(46, 125, 50, 0.10);
+        border: 1px solid rgba(46, 125, 50, 0.35);
+        color: #7bd881;
+    }
+
+
+.icone-erro {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e50914;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* ANIMAÇÕES */
+
+@keyframes aparecerErroCampo {
+
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes aparecerMensagem {
+
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   8. COMPRA FINALIZADA
+===================================================== */
+
+#area-sucesso {
+    padding: 50px 20px;
+}
+
+.sucesso-container {
+    max-width: 520px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #16161e;
+    border: 1px solid #292934;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.sucesso-icone {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2e7d32;
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.sucesso-container h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.sucesso-subtitulo {
+    margin-bottom: 30px;
+    color: #aaa;
+}
+
+.resumo-compra {
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    background: #0d0d12;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.resumo-linha {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #292934;
+}
+
+    .resumo-linha:last-child {
+        border-bottom: none;
+    }
+
+    .resumo-linha span {
+        color: #999;
+    }
+
+.btn-nova-compra {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #e50914;
+    color: white;
+    font-weight: bold;
+}
+
+    .btn-nova-compra:hover {
+        background: #f6121d;
+    }
+
+
+/* =====================================================
+   9. RESPONSIVIDADE
+===================================================== */
+
+
+/* =====================================================
+   TABLETS - ATÉ 900px
+===================================================== */
+
+@media (max-width: 900px) {
+
+    main {
+        padding: 30px 24px;
+    }
+
+
+    /* FILMES */
+
+    .filmes-container {
+        grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+        gap: 22px;
+    }
+
+
+    /* SESSÕES */
+
+    #area-sessoes {
+        padding: 30px 0;
+    }
+
+    #lista-sessoes {
+        grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+    }
+
+
+    /* ASSENTOS */
+
+    #area-assentos {
+        padding: 30px 0;
+    }
+
+    .tela-cinema,
+    .assentos-container,
+    .legenda-assentos,
+    .acoes-assentos {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .assentos-container {
+        gap: 9px;
+    }
+
+    .assento {
+        min-width: 0;
+    }
+
+
+    /* FORMULÁRIO */
+
+    #area-cliente {
+        padding: 30px 0;
+    }
+}
+
+
+/* =====================================================
+   CELULARES - ATÉ 600px
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    .topo-cinema {
+        padding: 22px 18px;
+    }
+
+    .logo-area {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-icone {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        font-size: 23px;
+    }
+
+    .topo-cinema h1 {
+        font-size: 26px;
+        line-height: 1.1;
+    }
+
+    .topo-cinema p {
+        font-size: 14px;
+    }
+
+
+    /* CONTEÚDO */
+
+    main {
+        padding: 25px 16px;
+    }
+
+    #titulo-filmes {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+
+    /* FILMES */
+
+    .filmes-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .filme-card {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .filme-poster-container {
+        height: auto;
+        aspect-ratio: 2 / 3;
+    }
+
+    .filme-info {
+        padding: 19px;
+    }
+
+        .filme-info h3 {
+            min-height: 0;
+            font-size: 20px;
+        }
+
+
+    /* SESSÕES */
+
+    #area-sessoes {
+        padding: 20px 0;
+    }
+
+    .sessoes-cabecalho {
+        margin-bottom: 22px;
+    }
+
+    #lista-sessoes {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .sessao-card {
+        padding: 20px;
+    }
+
+        .sessao-card h3 {
+            font-size: 20px;
+        }
+
+
+    /* ASSENTOS */
+
+    #area-assentos {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+        #area-assentos h2 {
+            margin-bottom: 20px;
+            font-size: 23px;
+        }
+
+    .tela-cinema {
+        width: 100%;
+        margin: 25px auto 35px;
+        padding: 10px;
+        font-size: 13px;
+        letter-spacing: 4px;
+    }
+
+    .assentos-container {
+        width: 100%;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        gap: 5px;
+        margin-bottom: 22px;
+    }
+
+    .assento {
+        width: 100%;
+        height: 34px;
+        min-width: 0;
+        padding: 2px;
+        border-radius: 6px;
+        font-size: 10px;
+    }
+
+        .assento.selecionado {
+            transform: scale(1.05);
+        }
+
+
+    /* LEGENDA */
+
+    .legenda-assentos {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 16px;
+        font-size: 12px;
+    }
+
+
+    /* BOTÕES DOS ASSENTOS */
+
+    .acoes-assentos {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .acoes-assentos button {
+            width: 100%;
+        }
+
+
+    /* FORMULÁRIO */
+
+    #area-cliente {
+        padding: 15px 0;
+    }
+
+    .cliente-container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+        .cliente-container h2 {
+            font-size: 23px;
+        }
+
+        .cliente-container > p {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .cliente-container input,
+        .cliente-container select {
+            min-height: 45px;
+            font-size: 16px;
+        }
+
+    .cliente-acoes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .cliente-acoes button {
+            width: 100%;
+            min-height: 45px;
+        }
+
+
+    /* ERROS */
+
+    .cliente-container .erro-campo {
+        font-size: 12px;
+    }
+
+    .mensagem-formulario {
+        font-size: 13px;
+    }
+
+
+    /* COMPRA FINALIZADA */
+
+    #area-sucesso {
+        padding: 20px 0;
+    }
+
+    .sucesso-container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 22px;
+    }
+
+    .sucesso-icone {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
+    }
+
+    .sucesso-container h2 {
+        font-size: 24px;
+    }
+
+    .resumo-compra {
+        padding: 8px 15px;
+    }
+
+    .resumo-linha {
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+    }
+}
+
+
+/* =====================================================
+   CELULARES PEQUENOS - ATÉ 400px
+===================================================== */
+
+@media (max-width: 400px) {
+
+    main {
+        padding: 22px 12px;
+    }
+
+    .topo-cinema h1 {
+        font-size: 23px;
+    }
+
+    .assentos-container {
+        gap: 4px;
+    }
+
+    .assento {
+        height: 32px;
+        font-size: 9px;
+    }
+
+    .cliente-container,
+    .sucesso-container {
+        padding: 18px;
+    }
+
+    .resumo-linha {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

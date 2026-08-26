@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cinema Management</title>
+
+     <link rel="stylesheet" href="/css/style.css?v=7">
+</head>
+
+<body>
+
+    <!-- =========================================
+         TOPO
+    ========================================== -->
+
+    <header class="topo-cinema">
+
+        <div class="logo-area">
+
+            <div>
+                <h1>
+                    Cinema <span>Management</span>
+                </h1>
+
+                <p>
+                    Sua experiência começa aqui
+                </p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================================
+             FILMES
+        ========================================== -->
+
+        <h2 id="titulo-filmes">
+            Filmes em cartaz
+        </h2>
+
+        <div id="lista-filmes"
+             class="filmes-container">
+        </div>
+
+
+        <!-- =========================================
+             SESSÕES
+        ========================================== -->
+
+        <section id="area-sessoes"
+                 style="display: none;">
+
+            <div class="sessoes-cabecalho">
+
+                <h2>
+                    Sessões disponíveis
+                </h2>
+
+                <h3 id="sessao-filme-titulo">
+                </h3>
+
+                <p>
+                    Escolha um horário para continuar
+                </p>
+
+            </div>
+
+            <div id="lista-sessoes">
+            </div>
+
+            <button onclick="voltarParaFilmes()">
+                Voltar
+            </button>
+
+        </section>
+
+
+        <!-- =========================================
+             ASSENTOS
+        ========================================== -->
+
+        <section id="area-assentos"
+                 style="display: none;">
+
+            <h2>
+                Escolha seu assento
+            </h2>
+
+            <div class="tela-cinema">
+                TELA
+            </div>
+
+            <div id="lista-assentos"
+                 class="assentos-container">
+            </div>
+
+
+            <!-- LEGENDA -->
+
+            <div class="legenda-assentos">
+
+                <div>
+                    <span class="legenda-cor livre"></span>
+                    Disponível
+                </div>
+
+                <div>
+                    <span class="legenda-cor selecionado"></span>
+                    Selecionado
+                </div>
+
+                <div>
+                    <span class="legenda-cor ocupado"></span>
+                    Ocupado
+                </div>
+
+            </div>
+
+
+            <!-- BOTÕES -->
+
+            <div class="acoes-assentos">
+
+                <button id="btn-continuar-assento"
+                        onclick="continuarComAssento()"
+                        disabled>
+
+                    Continuar
+
+                </button>
+
+                <button onclick="voltarParaSessoes()">
+                    Voltar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CLIENTE
+        ========================================== -->
+
+        <section id="area-cliente"
+                 style="display: none;">
+
+            <div class="cliente-container">
+
+                <h2>
+                    Identificação
+                </h2>
+
+                <p>
+                    Informe seus dados para continuar a compra
+                </p>
+
+
+                <!-- NOME -->
+
+                <label for="cliente-nome">
+                    Nome
+                </label>
+
+                <input type="text"
+                       id="cliente-nome"
+                       placeholder="Digite seu nome">
+
+                <div id="erro-nome"
+                     class="erro-campo">
+                </div>
+
+
+                <!-- E-MAIL -->
+
+                <label for="cliente-email">
+                    E-mail
+                </label>
+
+                <input type="email"
+                       id="cliente-email"
+                       placeholder="Digite seu e-mail">
+
+                <div id="erro-email"
+                     class="erro-campo">
+                </div>
+
+
+                <!-- TELEFONE -->
+
+                <label for="cliente-telefone">
+                    Telefone
+                </label>
+
+                <input type="text"
+                       id="cliente-telefone"
+                       placeholder="Digite seu telefone"
+                       maxlength="11">
+
+                <div id="erro-telefone"
+                     class="erro-campo">
+                </div>
+
+
+                <!-- NASCIMENTO -->
+
+                <label for="cliente-nascimento">
+                    Data de nascimento
+                </label>
+
+                <input type="date"
+                       id="cliente-nascimento">
+
+                <div id="erro-nascimento"
+                     class="erro-campo">
+                </div>
+
+
+                <!-- PAGAMENTO -->
+
+                <label for="forma-pagamento">
+                    Forma de pagamento
+                </label>
+
+                <select id="forma-pagamento">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option value="Pix">
+                        Pix
+                    </option>
+
+                    <option value="Cartão">
+                        Cartão
+                    </option>
+
+                    <option value="Dinheiro">
+                        Dinheiro
+                    </option>
+
+                </select>
+
+                <div id="erro-pagamento"
+                     class="erro-campo">
+                </div>
+
+
+                <!-- ERRO GERAL DA API -->
+
+                <div id="mensagem-cliente"
+                     class="mensagem-formulario"
+                     style="display: none;">
+                </div>
+
+
+                <!-- AÇÕES -->
+
+                <div class="cliente-acoes">
+
+                    <button onclick="voltarParaAssentos()">
+                        Voltar
+                    </button>
+
+                    <button onclick="continuarCliente()">
+                        Continuar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             COMPRA FINALIZADA
+        ========================================== -->
+
+        <section id="area-sucesso"
+                 style="display: none;">
+
+            <div class="sucesso-container">
+
+                <div class="sucesso-icone">
+                    ✓
+                </div>
+
+                <h2>
+                    Compra realizada!
+                </h2>
+
+                <p class="sucesso-subtitulo">
+                    Seu ingresso foi gerado com sucesso.
+                </p>
+
+
+                <div class="resumo-compra">
+
+                    <div class="resumo-linha">
+
+                        <span>
+                            Cliente
+                        </span>
+
+                        <strong id="resumo-cliente">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="resumo-linha">
+
+                        <span>
+                            Assento
+                        </span>
+
+                        <strong id="resumo-assento">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="resumo-linha">
+
+                        <span>
+                            Valor
+                        </span>
+
+                        <strong id="resumo-valor">
+                        </strong>
+
+                    </div>
+
+
+                    <div class="resumo-linha">
+
+                        <span>
+                            Pagamento
+                        </span>
+
+                        <strong id="resumo-pagamento">
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button class="btn-nova-compra"
+                        onclick="novaCompra()">
+
+                    Comprar outro ingresso
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/js/app.js?v=4"></script>
+
+</body>
+
+</html>
